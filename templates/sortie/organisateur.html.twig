@@ -72,10 +72,18 @@
             {% endfor %}
         </div>
     {% else %}
+
         <h5 id="titreForm"> Tu n'as organisé aucune sortie pour le moment</h5>
+        <br>
+        <br>
+        <br>
         <div class="btn-ajout">
+
             <a id="btn-ajouter-liste" href="{{ path('sortie_creation') }}"> Ajoute une sortie</a>
         </div>
+        <br>
+        <br>
+        <br>
 
     {% endif %}
 {% endblock %}
