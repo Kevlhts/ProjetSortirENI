@@ -4,22 +4,56 @@
 {% endblock %}
 
 {% block body %}
-    <div>
-        {{ form_start(form) }}
+    <div class="container-general2">
+        <div class="container-bloc">
+            <div class="liste-1">
 
-        {{ form_row(form) }}
-        <button>Modifier</button>
-        {{ form_end(form) }}
+                <div class="photo-modifier">
+                    <img src="{{ asset('uploads/brochures/' ~ participant.brochureFilename) }}"
+                         alt="{{ participant.brochureFilename }}">
+                </div>
+                <div class="container-description">
+                    <ul class="liste-description">
+
+                        <p><strong id="profil">
+                                Pseudo :
+                            </strong>{{ participant.pseudo }}</p>
+                        <p> <strong id="profil">
+                                Nom :
+                            </strong>{{ participant.nom }}</p>
+                        <p> <strong id="profil">
+                                Prenom :
+                            </strong>{{ participant.prenom }}</p>
+                        <p><strong id="profil">
+                                Telephone :
+                            </strong>{{ participant.telephone }}</p>
+                        <p> <strong id="profil">
+                                Campus :
+                            </strong>{{ participant.campus.nom }}</p>
+
+
+                        {% if app.user.pseudo==participant.pseudo %}
+
+
+                        {% endif %}
+                        <br>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div>
-        <p><a href="{{ path('admin_util_suppr', {'id':user.id}) }}">Supprimer l'utilisateur</a></p>
-        {% if 'ROLE_INACTIF' in user.roles %}
-            <p><a href="{{ path('admin_util_enable',{'id':user.id}) }}">Activer l'utilisateur</a></p>
-        {% else %}
-            <p><a href="{{ path('admin_util_disable',{'id':user.id}) }}">Désactiver l'utilisateur</a></p>
-        {% endif %}
+    <p><a href="{{ path('admin_util_suppr', {'id':participant.id}) }}">Supprimer l'utilisateur</a></p>
+    {% if 'ROLE_INACTIF' in participant.roles %}
+        <p><a href="{{ path('admin_util_enable',{'id':participant.id}) }}">Activer l'utilisateur</a></p>
+    {% else %}
+        <p><a href="{{ path('admin_util_disable',{'id':participant.id}) }}">Désactiver l'utilisateur</a></p>
+    {% endif %}
 
-        <p><a href="{{ path('admin_util_sorties', {'id':user.id}) }}">Sorties de l'utilisateur</a> </p>
+    <p><a href="{{ path('admin_util_sorties', {'id':participant.id}) }}">Sorties de l'utilisateur</a> </p>
+    <div>
+
     </div>
 {% endblock %}
 

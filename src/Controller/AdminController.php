@@ -126,13 +126,11 @@ class AdminController extends AbstractController
         $participant = new Participant();
         $participant = $participantRepository->find($id);
 
-        $form = $this->createForm(ParticipantType::class, $participant);
-        $form->handleRequest($request);
 
 
         return $this->render('admin/detail.html.twig', [
-        'form'=>$form,
-        'user'=>$participant
+
+        'participant'=>$participant
         ]);
     }
 
