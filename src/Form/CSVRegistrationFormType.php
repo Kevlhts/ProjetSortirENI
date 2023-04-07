@@ -16,7 +16,7 @@ class CSVRegistrationFormType extends AbstractType
             ->add('csv', FileType::class, [
                 'label'=>'Fichier CSV',
                 'mapped'=>false,
-                'required'=>false,
+//                'required'=>false,
                 'constraints'=>[
                     new File(
                         maxSize: '1000k',

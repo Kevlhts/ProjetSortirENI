@@ -7,7 +7,7 @@
         <h3>Ajouter un utilisateur</h3>
         {{ form_start(form) }}
         {{ form_row(form) }}
-        <button>Valider</button>
+        <button id="boutonForm">Valider</button>
         {{ form_end(form) }}
     </div>
     <p>Ou ajoutez des utilisateurs à l'aide d'un fichier CSV</p>
@@ -15,7 +15,7 @@
         {{ form_start(form2) }}
         {{ form_row(form2) }}
 
-        <button>Valider</button>
+        <button id="boutonForm">Valider</button>
         {{ form_end(form2) }}
     </div>
 {% endblock %}

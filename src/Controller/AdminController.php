@@ -183,6 +183,8 @@ class AdminController extends AbstractController
             if (($handle = fopen($csv, 'r')) !== FALSE) {
                 while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
                     $user2 = new Participant();
+                    $user2->setPassword('placeholder');
+
                     if(filter_var($data[0], FILTER_VALIDATE_EMAIL)) {
                         $user2->setEmail($data[0]);
                     }

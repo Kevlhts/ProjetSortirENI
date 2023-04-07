@@ -3,19 +3,30 @@
 
 {% endblock %}
 {% block body %}
-    <div>
-        <h2>Utilisateurs insérés</h2>
-        {% for user in listeUser %}
-        <p>{{ user.pseudo }}</p>
-        {% endfor %}
+    <div class="formLoggParent">
+        <div class="formLogg">
+            <div>
+                <h2>Utilisateurs insérés</h2>
+                {% for user in listeUser %}
+                    <p>{{ user.pseudo }}</p>
+                {% endfor %}
+            </div>
+            <div>
+                <h2>Erreurs</h2>
+                {% for erreur in erreurs %}
+                    <p>{{ erreur }}</p>
+                {% endfor %}
+            </div>
+            <div class="lienParent">
+                <div class="lein">
+                    <p><a class="btn-liste" href="{{ path('admin_utilisateurs') }}">Retour à la liste des
+                            utilisateurs</a></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <h2>Erreurs</h2>
-        {% for erreur in erreurs %}
-            <p>{{ erreur }}</p>
-        {% endfor %}
-    </div>
-    <p><a href="{{ path('admin_utilisateurs') }}">Retour à la liste des utilisateurs</a> </p>
+
+
 {% endblock %}
 
 
